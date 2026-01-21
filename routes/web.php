@@ -14,7 +14,10 @@ use App\Http\Middleware\VerifyClinicOwnership;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-
+// Ruta de prueba para verificar que Laravel responde
+Route::get('/ping', function () {
+    return 'pong';
+});
 // Ruta raíz - redirige a login si no está autenticado o a home si está autenticado
 Route::get('/', function () {
     if (auth()->check()) {
