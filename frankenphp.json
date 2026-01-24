@@ -1,0 +1,7 @@
+{
+  "workers": 2,
+  "config": {
+    "documentRoot": "public"
+  }
+}
+  
