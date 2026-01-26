@@ -23,4 +23,5 @@ php artisan route:cache || true
 php artisan view:cache || true
 
 # Iniciar FrankenPHP
-exec frankenphp run --config /etc/frankenphp/conf.d/frankenphp.conf
+# Railway usa la variable PORT automáticamente
+exec frankenphp run
