@@ -72,14 +72,19 @@ MAIL_FROM_NAME="${APP_NAME}"
 4. **Configura el Build Command**
    - En Settings > Build, asegúrate de que el comando de build sea:
    ```
-   composer install --no-dev --optimize-autoloader && npm install && npm run build
+   composer install --no-dev --optimize-autoloader --no-scripts && npm install && npm run build
    ```
+   **IMPORTANTE:** 
+   - Usa `&&` (doble ampersand) NO `&` (simple)
+   - El flag `--no-scripts` evita problemas con la eliminación de paquetes de desarrollo
 
-5. **Configura el Start Command**
-   - Railway detectará automáticamente FrankenPHP, pero puedes configurar:
+5. **Configura el Start Command (Opcional)**
+   - Railway detectará automáticamente FrankenPHP
+   - Si quieres ejecutar migraciones automáticamente, configura:
    ```
-   php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache
+   php artisan migrate --force
    ```
+   **IMPORTANTE:** Usa `--force` (dos guiones) NO `---force` (tres guiones)
 
 6. **Despliega**
    - Railway desplegará automáticamente cuando hagas push a tu repositorio
