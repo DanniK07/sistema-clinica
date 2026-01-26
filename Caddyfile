@@ -1,4 +1,4 @@
-:{$PORT} {
+0.0.0.0:{$PORT} {
 	root * public
 	php_server
 	file_server

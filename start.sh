@@ -24,6 +24,15 @@ php artisan view:cache || true
 
 # Iniciar FrankenPHP
 # Railway proporciona la variable PORT automáticamente
-echo "Starting FrankenPHP on port ${PORT:-8080}"
-echo "PORT=${PORT}"
+echo "=========================================="
+echo "Starting FrankenPHP"
+echo "PORT=${PORT:-8080}"
+echo "Working directory: $(pwd)"
+echo "Public directory exists: $([ -d public ] && echo 'YES' || echo 'NO')"
+echo "=========================================="
+
+# Verificar que Laravel puede iniciar sin errores
+php artisan route:list --columns=uri,method > /dev/null 2>&1 && echo "Laravel routes OK" || echo "WARNING: Laravel routes check failed"
+
+# Iniciar FrankenPHP
 exec frankenphp run
