@@ -1,0 +1,5 @@
+:{$PORT} {
+	root * public
+	php_server
+	file_server
+}

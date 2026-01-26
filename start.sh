@@ -24,8 +24,6 @@ php artisan view:cache || true
 
 # Iniciar FrankenPHP
 # Railway proporciona la variable PORT automáticamente
-# Configuramos SERVER_NAME para que Caddy escuche en el puerto correcto
-export SERVER_NAME=":${PORT:-8080}"
 echo "Starting FrankenPHP on port ${PORT:-8080}"
-echo "SERVER_NAME=${SERVER_NAME}"
+echo "PORT=${PORT}"
 exec frankenphp run
