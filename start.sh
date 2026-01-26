@@ -23,5 +23,12 @@ php artisan route:cache || true
 php artisan view:cache || true
 
 # Iniciar FrankenPHP
-# Railway usa la variable PORT automáticamente
-exec frankenphp run
+# Railway proporciona la variable PORT automáticamente
+# FrankenPHP debe escuchar en 0.0.0.0:$PORT
+if [ -z "$PORT" ]; then
+    echo "ERROR: PORT environment variable is not set"
+    exit 1
+fi
+
+echo "Starting FrankenPHP on port $PORT"
+exec frankenphp run --listen "0.0.0.0:$PORT"
