@@ -24,7 +24,6 @@ php artisan view:cache || true
 
 # Iniciar FrankenPHP
 # Railway proporciona la variable PORT automáticamente
-# FrankenPHP/Caddy detecta automáticamente PORT
-# Simplemente ejecutamos frankenphp run - Railway maneja el puerto
-echo "Starting FrankenPHP (Railway will handle PORT automatically)"
+# El Caddyfile usa {$PORT} para escuchar en el puerto correcto
+echo "Starting FrankenPHP on port ${PORT:-8080}"
 exec frankenphp run
