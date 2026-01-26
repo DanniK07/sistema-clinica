@@ -2,7 +2,7 @@
 	auto_https off
 }
 
-:{$PORT} {
+0.0.0.0:{$PORT} {
 	root * public
 	encode zstd gzip
 
@@ -15,8 +15,8 @@
 	}
 
 	handle {
-		php_server
 		try_files {path} /index.php?{query}
+		php_server
 		file_server
 	}
 }
