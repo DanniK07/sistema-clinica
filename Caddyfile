@@ -2,10 +2,10 @@
 	auto_https off
 }
 
-0.0.0.0:{$PORT} {
+:{$PORT} {
+	bind 0.0.0.0
 	root * public
-	encode zstd gzip
-
+	
 	@static {
 		file
 		path *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf *.eot
