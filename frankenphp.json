@@ -1,7 +1,8 @@
 {
   "workers": 2,
   "config": {
-    "documentRoot": "public"
+    "documentRoot": "public",
+    "serverName": ":{$PORT}"
   }
 }
   
