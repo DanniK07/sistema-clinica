@@ -31,4 +31,4 @@ if [ -z "$PORT" ]; then
 fi
 
 echo "Starting FrankenPHP on port $PORT"
-exec frankenphp run --listen "0.0.0.0:$PORT"
+exec frankenphp run --addr "0.0.0.0:$PORT"
