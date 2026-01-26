@@ -1,8 +1,5 @@
 {
 	auto_https off
-}
-
-{
 	bind 0.0.0.0
 }
 
